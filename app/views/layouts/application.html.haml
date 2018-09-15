@@ -23,5 +23,11 @@
             %a.nav-link{ href: "#" } dwa
           %li.nav-item
             %a.nav-link{ href: "#" } trzy
+          -if user_signed_in?
+            %li.nav-item
+              =link_to "logout", destroy_user_session_path, method: :delete, class: "nav-link"
+          -else
+            %li.nav-item
+              =link_to "login", new_user_session_path , class: "nav-link"
   %body
     = yield
