@@ -16,6 +16,8 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap', '~> 4.1.3'
 gem 'sprockets-rails'
+gem 'devise'
+
 group :development, :test do
   gem 'pry-rails'
 end
