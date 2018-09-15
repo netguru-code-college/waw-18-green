@@ -1,0 +1,28 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  %a.navbar-brand{:href => "#"} Super Rating Chińczyków
+  %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarNav.collapse.navbar-collapse
+    %ul.navbar-nav
+      %li.nav-item
+        %a.nav-link{:href => "#"}
+          Strona główna
+          %span.sr-only (current)
+      %li.nav-item
+        %a.nav-link{:href => "#"} raz
+      %li.nav-item
+        %a.nav-link{:href => "#"} dwa
+      %li.nav-item
+        %a.nav-link{:href => "#"} trzy
+%div.container-fluid
+  .card{:style => "width: 30vw; margin:0 auto; margin-top: 5vh;"}
+    %img.card-img-top{:alt => "Card image cap", :src => "https://9bf6ddc20002c5f1a946-ef07da46c7e506e973e0d9fa57c693df.ssl.cf1.rackcdn.com/636238169942444956+14512.png", :style => "width: 25vw; margin:0 auto;"}/
+    .card-body{:style => "width: 25vw; margin:0 auto;"}
+      %h5.card-title Nazwa lokalu
+      %p.card-text Krótki opis lokalu
+      %i.far.fa-star
+      %i.far.fa-star
+      %i.far.fa-star
+      %i.far.fa-star
+      %i.far.fa-star
+      <!--%i.fas.fa-star -->
