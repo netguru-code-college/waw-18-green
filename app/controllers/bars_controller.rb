@@ -1,6 +1,7 @@
 class BarsController < ApplicationController
-  before_action :set_bar, only: [:show, :edit, :update, :destroy]
+  before_action :set_bar, only: [:show, :edit, :update]
   before_action :authenticate_user!, only: [:new]
+  before_action :author?, only: [:destroy, :edit]
 
   def index
     @bars = Bar.all
@@ -18,7 +19,7 @@ class BarsController < ApplicationController
 
   def create
     @bar = Bar.new(bar_params)
-    @bar.user = User.first
+    @bar.user = current_user
     if @bar.save
       redirect_to bars_path
     else
@@ -35,16 +36,23 @@ class BarsController < ApplicationController
   end
 
   def destroy
-    @bar.destroy
+    @bar = Bar.find(params[:id])
     redirect_to bars_path
   end
 
   private
-    def set_bar
-      @bar = Bar.find(params[:id])
-    end
 
-    def bar_params
-      params.require(:bar).permit(:name, :address, :description, :rating, :user_id)
-    end
+  def set_bar
+    @bar = Bar.find(params[:id])
+  end
+
+  def bar_params
+    params.require(:bar).permit(:name, :address, :description, :rating, :user_id)
+  end
+
+  def author?
+    @bar = Bar.find(params[:id])
+    redirect_to bars_path if current_user != @bar.user
+  end
+  
 end
