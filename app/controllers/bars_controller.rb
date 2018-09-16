@@ -3,7 +3,7 @@ class BarsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
 
   def index
-    @bars = BarDecorator.decorate_collection(Bar.all)
+    @bars = BarDecorator.decorate_collection(Bar.paginate(page: params[:page]))
   end
 
   def show

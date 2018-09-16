@@ -23,6 +23,7 @@ gem 'draper'
 gem 'carrierwave-dropbox'
 gem 'dotenv-rails'
 gem 'pundit'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'pry-rails'
