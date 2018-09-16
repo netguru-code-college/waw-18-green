@@ -8,4 +8,4 @@
 
 user = User.create!(username: Faker::Internet.username, email: Faker::Internet.email, password: "haslo123")
 
-Bar.create!(name: "asd", address: "adres", description: "opis", rating: 4.0, user_id: user.id)
+Bar.create!(name: Faker::Restaurant.name, address: Faker::RickAndMorty.location, description: Faker::Restaurant.description, rating: 4.0, user_id: user.id)
