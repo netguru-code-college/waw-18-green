@@ -18,6 +18,7 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'sprockets-rails'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
+gem 'faker'
 
 group :development, :test do
   gem 'pry-rails'
@@ -36,7 +37,7 @@ group :test do
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'chromedriver-helper'
   gem 'factory_bot_rails'
-  gem 'faker'
+
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
