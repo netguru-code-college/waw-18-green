@@ -1,6 +1,6 @@
-.div.container
+.container
   .row
     .jumbotron
       %h1 Best chinczyk in Warsaw
       = link_to "Add chinczyk", new_bar_path, class:"btn btn-primary"
-    = render "shared/bar", obj: @bars
+    = render 'bar', obj: @bars

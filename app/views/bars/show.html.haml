@@ -1,3 +1,44 @@
+<<<<<<< HEAD
+.container
+  .row
+    %h1.text-center.full_width #{@bar.name}
+
+  .row
+    .col-md-6
+      .card.card-show
+        .card-img-top
+          .text-center
+            = image_tag("chinczyk.png", size:'300x300')
+        .card-body
+          %h4.card-title
+            #{@bar.name}
+          %p.card-text
+            Rating:
+            #{@bar.rating}
+          %p.card-text
+            Address:
+            #{@bar.address}
+          %p.card-text
+            #{@bar.description}
+          %small
+            created by:
+            #{@bar.user.username if @bar.user}
+            = time_ago_in_words(@bar.created_at)
+            ago   ||
+            Last updated:
+            = time_ago_in_words(@bar.updated_at)
+            ago
+          %div
+            = link_to "Edit", edit_bar_path(@bar), class: "btn btn-success"
+            = link_to "Delete", bar_path(@bar), method: :delete,
+                        data: {confirm: "Are you sure you want to delete this bar?"},
+                        class: "btn btn-danger"
+    .col-md6
+      %p TODO comments
+  .row
+    .text-center.full_width
+      [
+=======
 %h1{ align: "center" } #{ @bar.name }
 
 .row
@@ -31,4 +72,6 @@
         = f.label :image
         = f.file_field :image, required: true
         = f.submit "Add image"
+>>>>>>> master
       = link_to "Go back to all bars.", bars_path
+      ]

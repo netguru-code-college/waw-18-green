@@ -1,19 +1,26 @@
 = form_for @bar do |f|
   - if @bar.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@bar.errors.count, "error")} prohibited this bar from being saved:"
+      %h2 = "#{pluralize(@bar.errors.count, "error")} prohibited this bar from being saved:"
       %ul
         - @bar.errors.full_messages.each do |message|
           %li= message
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :address
-    = f.text_field :address
-  .field
-    = f.label :description
-    = f.text_area :description
-  .actions
-    = f.submit 'Save'
+  .almost_full_width.text-center
+    .form-horizontal
+      .form-group
+        .control-label.col-sm-3
+          = f.label :name
+        .col-sm-9
+        = f.text_field :name, placeholder: "Name of bar", autofocus: true
+      .form-group
+        .control-label.col-sm-3
+          = f.label :address
+        .col-sm-9
+        = f.text_field :address, placeholder: "Adress of bar", autofocus: true
+      .form-group
+        .control-label.col-sm-3
+          = f.label :description
+        .col-sm-9
+        = f.text_area :description, placeholder: "Tell us about this bar", autofocus: true
+      .form-group
+        = f.submit 'Save', class: "btn btn-success"

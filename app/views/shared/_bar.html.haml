@@ -1,29 +1,31 @@
 - obj.each do |bar|
-  .row
-    .col-xs-8.col-xs-offset-2.offset2vh
-      .card
-        =image_tag "chinczyk.png"
-        %br
-        = link_to bar.name, bar_path(bar)
-        %br
-        Rating: #{ bar.rating }
-        %br
-        Address: #{ bar.address }
-        %br
-        = truncate(bar.description, length: 100)
-        %br
-
-        %small
-          created by:
-          =link_to bar.username, user_path(id: bar.user_id)
-          =time_ago_in_words(bar.created_at)
-          ago   ||
-          Last updated:
-          =time_ago_in_words(bar.updated_at)
-          ago
-          -if current_user == bar.user
-            %div
-              = link_to "Edit", edit_bar_path(bar), class: "btn btn-success"
-              = link_to "Delete", bar_path(bar), method: :delete,
-                          data: {confirm: "Are you sure you want to delete this bar?"},
-                          class: "btn btn-danger"
+  .card.full_width
+    .row
+      .col-md-4
+        = image_tag("chinczyk.png", size:'300x300')
+      .col-md-8.px-3
+        .card-block.px-3
+          %h4.card-title
+            = link_to bar.name, bar_path(bar)
+          %p.card-text
+            Rating:
+            #{bar.rating}
+          %p.card-text
+            Address:
+            #{bar.address}
+          %p.card-text
+            = truncate(bar.description, length: 100)
+          %small
+            created by:
+            #{bar.user.username if bar.user}
+            = time_ago_in_words(bar.created_at)
+            ago   ||
+            Last updated:
+            = time_ago_in_words(bar.updated_at)
+            ago
+          %div
+            = link_to "Edit", edit_bar_path(bar), class: "btn btn-success"
+            = link_to "Delete", bar_path(bar), method: :delete,
+                        data: {confirm: "Are you sure you want to delete this bar?"},
+                        class: "btn btn-danger"
+  .margin
