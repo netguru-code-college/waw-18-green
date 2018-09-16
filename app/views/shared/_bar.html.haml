@@ -6,9 +6,9 @@
         %br
         = link_to bar.name, bar_path(bar)
         %br
-        Rating: #{bar.rating}
+        Rating: #{ bar.rating }
         %br
-        Address: #{bar.address}
+        Address: #{ bar.address }
         %br
         =truncate(bar.description, length: 100)
         %br
@@ -23,7 +23,7 @@
           ago
           -if current_user == bar.user
             %div
-              =link_to "Edit", edit_bar_path(bar), class: "btn btn-success"
-              =link_to "Delete", bar_path(bar), method: :delete,
+              = link_to "Edit", edit_bar_path(bar), class: "btn btn-success"
+              = link_to "Delete", bar_path(bar), method: :delete,
                           data: {confirm: "Are you sure you want to delete this bar?"},
                           class: "btn btn-danger"
