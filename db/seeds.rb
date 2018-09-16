@@ -12,5 +12,5 @@ user = User.create!(username: Faker::Internet.username,
 
 Bar.create!(name: Faker::Restaurant.name,
             address: Faker::RickAndMorty.location,
-            description: Faker:: Faker::Lorem.words(10).join(' '),
+            description: Faker::Lorem.words(10).join(' '),
             rating: 4.0, user_id: user.id)
