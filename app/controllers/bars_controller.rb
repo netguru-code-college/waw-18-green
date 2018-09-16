@@ -18,8 +18,9 @@ class BarsController < ApplicationController
 
   def create
     @bar = Bar.new(bar_params)
-    @bar.user = User.first
+    @bar.user = current_user
     if @bar.save
+      flash[:success] = "Bar was successfully created"
       redirect_to bars_path
     else
       render 'new'
@@ -27,7 +28,9 @@ class BarsController < ApplicationController
   end
 
   def update
+    @bar.user = current_user
     if @bar.update(bar_params)
+      flash[:success] = "Bar was successfully updated"
       redirect_to bar_path(@bar)
     else
       render 'edit'
@@ -36,6 +39,7 @@ class BarsController < ApplicationController
 
   def destroy
     @bar.destroy
+    flash[:danger] = "Bar was successfully deleted"
     redirect_to bars_path
   end
 

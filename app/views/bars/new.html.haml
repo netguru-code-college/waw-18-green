@@ -1,7 +1,10 @@
-%h1{:align => "center"} Add new bar
+.container
+  %h1{:align => "center"} Add new user
+  .row
+    = render 'form'
+  %div{:align => "center"}
+    [
+    = link_to "I don't want to add it. Get me out of here", bars_path
+    ]
 
-= render 'form'
-
-[
-= link_to "I don't want to add it. Get me out of here", bars_path
-]
+    

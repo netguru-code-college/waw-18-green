@@ -30,4 +30,5 @@
             %li.nav-item
               =link_to "login", new_user_session_path , class: "nav-link"
   %body
+    = render 'layouts/messages'
     = yield
