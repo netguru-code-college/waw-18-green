@@ -9,6 +9,7 @@ class BarsController < ApplicationController
 
   def show
     @bar
+    @image = Image.new
   end
 
   def new
