@@ -19,6 +19,8 @@ gem 'sprockets-rails'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'faker'
+gem 'carrierwave-dropbox'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'pry-rails'
