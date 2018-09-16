@@ -1,0 +1,5 @@
+= form_for bar.images.build, url: images_path, html: { multipart: true } do |f|
+  = f.hidden_field :bar_id, value: bar.id
+  = f.label :image
+  = f.file_field :image, required: true
+  = f.submit
