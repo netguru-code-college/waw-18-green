@@ -1,7 +1,7 @@
 %h1{:align => "center"} #{@bar.name}
 
 .row
-  .col-xs-8.col-xs-offset-2
+  .col-xs-8{style: "margin:0 auto;"}
     .card
       =image_tag "chinczyk.png"
       %br
@@ -13,17 +13,17 @@
       %br
 
       %small
-        created by: tutaj dodac usera po polaczeniu modeli
+        created by:
+        =@bar.user.username
         =time_ago_in_words(@bar.created_at)
         ago   ||
         Last updated:
         =time_ago_in_words(@bar.updated_at)
         ago
-      %div
-        =link_to "Edit", edit_bar_path(@bar), class: "btn btn-success"
-        =link_to "Delete", bar_path(@bar), method: :delete,
-                    data: {confirm: "Are you sure you want to delete this bar?"},
-                    class: "btn btn-danger"
-      [
+      -if current_user == @bar.user
+        %div
+          =link_to "Edit", edit_bar_path(@bar), class: "btn btn-success"
+          =link_to "Delete", bar_path(@bar), method: :delete,
+                      data: {confirm: "Are you sure you want to delete this bar?"},
+                      class: "btn btn-danger"
       = link_to "Go back to all bars.", bars_path
-      ]

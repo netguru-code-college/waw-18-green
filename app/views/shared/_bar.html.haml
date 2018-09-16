@@ -15,7 +15,7 @@
 
         %small
           created by:
-          =bar.user.username
+          =link_to bar.user.username, user_path(id: bar.user_id)
           =time_ago_in_words(bar.created_at)
           ago   ||
           Last updated:

@@ -8,13 +8,11 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %nav.navbar.navbar-expand-lg.navbar-light.bg-light
-      %a.navbar-brand{ href: "#" } Super Rating Chińczyków
+      =link_to "Super Rating Chinczykow", root_path, class: "navbar-brand"
       %button.navbar-toggler{ "aria-controls": "navbarNav", "aria-expanded": "false", "aria-label": "Toggle navigation", "data-target": "#navbarNav", "data-toggle": "collapse", :type => "button" }
         %span.navbar-toggler-icon
       #navbarNav.collapse.navbar-collapse
         %ul.navbar-nav
-          %li.nav-item
-            =link_to "Main", root_path, class: "nav-link"
           %li.nav-item
             %a.nav-link{ href: "#" } raz
           %li.nav-item
@@ -23,7 +21,8 @@
             %a.nav-link{ href: "#" } trzy
           -if user_signed_in?
             %li.nav-link
-              %span.nav-link.disabled=current_user.username
+              =link_to current_user.username, user_path(id: current_user.id)
+              -#%span.nav-link.=current_user.username
             %li.nav-item
               =link_to "logout", destroy_user_session_path, method: :delete, class: "nav-link"
           -else

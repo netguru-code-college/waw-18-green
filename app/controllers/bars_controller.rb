@@ -8,6 +8,7 @@ class BarsController < ApplicationController
   end
 
   def show
+    @bar
   end
 
   def new
