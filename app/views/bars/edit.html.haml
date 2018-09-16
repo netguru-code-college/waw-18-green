@@ -1,7 +1,8 @@
-%h1{:align => "center"} Edit #{@bar.name}
-
-= render 'form'
-
-[
-= link_to "I've changed my mind. This bar looks cool.", bars_path
-]
+.container
+  %h1.text-center Edit #{@bar.name}
+  .row
+    = render 'form'
+  .text-center
+    [
+    = link_to "I've changed my mind. This bar looks cool.", bars_path
+    ]
