@@ -1,5 +1,5 @@
 class BarsController < ApplicationController
-  before_action :set_bar, only: [:show, :edit, :update]
+  before_action :set_bar, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new]
   before_action :author?, only: [:destroy, :edit]
 
@@ -36,7 +36,7 @@ class BarsController < ApplicationController
   end
 
   def destroy
-    @bar = Bar.find(params[:id])
+    @bar.destroy
     redirect_to bars_path
   end
 
@@ -51,7 +51,6 @@ class BarsController < ApplicationController
   end
 
   def author?
-    @bar = Bar.find(params[:id])
     redirect_to bars_path if current_user != @bar.user
   end
   
