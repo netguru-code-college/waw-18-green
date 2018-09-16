@@ -9,15 +9,15 @@
             = link_to bar.name, bar_path(bar)
           %p.card-text
             Rating:
-            #{ bar.rating }
+            = bar.rating
           %p.card-text
             Address:
-            #{ bar.address }
+            = bar.address
           %p.card-text
             = truncate(bar.description, length: 100)
           %small
             created by:
-            #{ bar.username if bar.user }
+            = bar.username
             = time_ago_in_words(bar.created_at)
             ago   ||
             Last updated:
