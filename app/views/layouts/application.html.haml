@@ -22,8 +22,8 @@
           %li.nav-item
             %a.nav-link{ href: "#" } trzy
           -if user_signed_in?
-            %li.nav-link
-              %span.nav-link.disabled=current_user.username
+            %li.nav-item
+              %a.nav-link.disabled=current_user.username
             %li.nav-item
               =link_to "logout", destroy_user_session_path, method: :delete, class: "nav-link"
           -else
