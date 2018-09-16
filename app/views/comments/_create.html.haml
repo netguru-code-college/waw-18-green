@@ -1,7 +1,7 @@
 - @bar.comments.each do |comment|
   %p= comment.body
 - if user_signed_in?
-  = form_with(model: [ @bar, @bar.comments.build ], local: true) do |form|
-    = form.text_area :body, :required => true, class: 'form-control'
+  = form_with(model: [@bar, @bar.comments.build]) do |form|
+    = form.text_area :body, required: true, class: 'form-control'
     %br
     = form.submit 'Add comment!', class: 'btn btn-sm btn-default'
