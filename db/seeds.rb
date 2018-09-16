@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create!(username: Faker::Internet.username, email: Faker::Internet.email, password: "haslo123")
+user = User.create!(username: Faker::Internet.username,
+                    email: Faker::Internet.email,
+                    password: "haslo123")
 
-Bar.create!(name: Faker::Restaurant.name, address: Faker::RickAndMorty.location, description: Faker::Restaurant.description, rating: 4.0, user_id: user.id)
+Bar.create!(name: Faker::Restaurant.name,
+            address: Faker::RickAndMorty.location,
+            description: Faker:: Faker::Lorem.words(10).join(' '),
+            rating: 4.0, user_id: user.id)
