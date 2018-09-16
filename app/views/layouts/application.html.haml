@@ -12,13 +12,15 @@
       %button.navbar-toggler{ "aria-controls": "navbarNav", "aria-expanded": "false", "aria-label": "Toggle navigation", "data-target": "#navbarNav", "data-toggle": "collapse", :type => "button" }
         %span.navbar-toggler-icon
       #navbarNav.collapse.navbar-collapse
-        %ul.navbar-nav
+        %ul.nav.navbar-nav.mr-auto
           %li.nav-item
             %a.nav-link{ href: "#" } raz
           %li.nav-item
             %a.nav-link{ href: "#" } dwa
           %li.nav-item
             %a.nav-link{ href: "#" } trzy
+
+        %ul.nav.navbar-nav.ml-auto
           -if user_signed_in?
             %li.nav-link
               = link_to current_user.username, user_path(id: current_user.id)
