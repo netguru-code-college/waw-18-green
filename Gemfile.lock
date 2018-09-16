@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/stympy/faker.git
+  revision: d5d22148b4144cfc165ea9b8b8551cec11ba88f7
+  branch: master
+  specs:
+    faker (1.9.1)
+      i18n (>= 0.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -29,6 +37,10 @@ GEM
       globalid (>= 0.3.6)
     activemodel (5.2.1)
       activesupport (= 5.2.1)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (5.2.1)
       activemodel (= 5.2.1)
       activesupport (= 5.2.1)
@@ -73,9 +85,12 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    carrierwave-dropbox (2.0.0)
+      carrierwave (~> 1.2)
+      dropbox-sdk-v2 (~> 0.0.3)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
-    chromedriver-helper (1.2.0)
+    chromedriver-helper (2.0.0)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
     coderay (1.1.2)
@@ -95,6 +110,20 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.3)
+    domain_name (0.5.20180417)
+      unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.5.0)
+    dotenv-rails (2.5.0)
+      dotenv (= 2.5.0)
+      railties (>= 3.2, < 6.0)
+    draper (3.0.1)
+      actionpack (~> 5.0)
+      activemodel (~> 5.0)
+      activemodel-serializers-xml (~> 1.0)
+      activesupport (~> 5.0)
+      request_store (~> 1.0)
+    dropbox-sdk-v2 (0.0.3)
+      http (~> 2.0)
     erubi (1.7.1)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -103,8 +132,6 @@ GEM
     factory_bot_rails (4.11.1)
       factory_bot (~> 4.11.1)
       railties (>= 3.0.0)
-    faker (1.9.1)
-      i18n (>= 0.7)
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -122,6 +149,15 @@ GEM
       haml (>= 4.0, < 6)
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
+    http (2.2.2)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 1.0.1)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    http-form_data (1.0.3)
+    http_parser.rb (0.6.0)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -201,6 +237,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    request_store (1.4.1)
+      rack (>= 1.4)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -265,6 +303,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.19)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.5)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.7.0)
@@ -287,11 +328,14 @@ DEPENDENCIES
   bootstrap (~> 4.1.3)
   capybara (>= 2.15, < 4.0)
   carrierwave (~> 1.0)
+  carrierwave-dropbox
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  dotenv-rails
+  draper
   factory_bot_rails
-  faker
+  faker!
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails

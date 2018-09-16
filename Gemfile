@@ -18,7 +18,10 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'sprockets-rails'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
-gem 'faker'
+gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
+gem 'draper'
+gem 'carrierwave-dropbox'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'pry-rails'

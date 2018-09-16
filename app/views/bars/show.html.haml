@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container
   .row
     %h1.text-center.full_width #{@bar.name}
@@ -37,5 +38,40 @@
   .row
     .text-center.full_width
       [
+=======
+%h1{ align: "center" } #{ @bar.name }
+
+.row
+  .col-xs-8{ style: "margin:0 auto;" }
+    .card
+      = image_tag "chinczyk.png"
+      %br
+      Rating: #{ @bar.rating }
+      %br
+      Address: #{ @bar.address }
+      %br
+      #{ @bar.description }
+      %br
+
+      %small
+        created by:
+        = @bar.username
+        = time_ago_in_words(@bar.created_at)
+        ago   ||
+        Last updated:
+        = time_ago_in_words(@bar.updated_at)
+        ago
+      -if current_user == @bar.user
+        %div
+          = link_to "Edit", edit_bar_path(@bar), class: "btn btn-success"
+          = link_to "Delete", bar_path(@bar), method: :delete,
+                      data: {confirm: "Are you sure you want to delete this bar?"},
+                      class: "btn btn-danger"
+      = form_for @bar.images.build, url: images_path, html: { multipart: true } do |f|
+        = f.hidden_field :bar_id, value: @bar.id
+        = f.label :image
+        = f.file_field :image, required: true
+        = f.submit "Add image"
+>>>>>>> master
       = link_to "Go back to all bars.", bars_path
       ]

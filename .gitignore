@@ -13,6 +13,9 @@
 !/log/.keep
 !/tmp/.keep
 
+# ENV file
+.env
+
 # Ignore uploaded files in development
 /storage/*
 
@@ -27,4 +30,4 @@
 
 
 .idea/
-public/uploads
+/public/uploads/*

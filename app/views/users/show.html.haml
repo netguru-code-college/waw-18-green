@@ -1,0 +1,9 @@
+.container
+  .row
+    .jumbotron
+      %h1= @user.username
+      User has
+      = @bars.size
+      chinczyk(s) added
+
+    = render "shared/bar", obj: @bars
