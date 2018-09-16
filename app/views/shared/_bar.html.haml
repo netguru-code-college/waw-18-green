@@ -26,7 +26,6 @@
           %div
             = link_to "Edit", edit_bar_path(bar), class: "btn btn-success"
             -if current_user == bar.user
-            = link_to "Delete", bar_path(bar), method: :delete,
-                        data: {confirm: "Are you sure you want to delete this bar?"},
-                        class: "btn btn-danger"
-  .margin
+              = link_to "Delete", bar_path(bar), method: :delete,
+                          data: {confirm: "Are you sure you want to delete this bar?"},
+                          class: "btn btn-danger"
