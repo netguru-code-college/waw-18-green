@@ -22,7 +22,6 @@
           -if user_signed_in?
             %li.nav-link
               =link_to current_user.username, user_path(id: current_user.id)
-              -#%span.nav-link.=current_user.username
             %li.nav-item
               =link_to "logout", destroy_user_session_path, method: :delete, class: "nav-link"
           -else
