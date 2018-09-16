@@ -1,5 +1,6 @@
 class Bar < ApplicationRecord
   has_many :images
+  has_many :comments
   belongs_to :user
   validates :name, presence: true,
             length: {minimum: 3, maximum: 25}

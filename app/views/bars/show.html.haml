@@ -31,4 +31,5 @@
         = f.label :image
         = f.file_field :image, required: true
         = f.submit "Add image"
+      = render "comments/create", obj: @bars
       = link_to "Go back to all bars.", bars_path
