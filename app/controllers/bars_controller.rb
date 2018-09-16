@@ -1,7 +1,6 @@
 class BarsController < ApplicationController
   before_action :set_bar, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new]
-  before_action :author?, only: [:destroy, :edit]
 
   def index
     @bars = BarDecorator.decorate_collection(Bar.paginate(page: params[:page]))
@@ -40,6 +39,7 @@ class BarsController < ApplicationController
   end
 
   def destroy
+    authorize @bar
     @bar.destroy
     flash[:danger] = "Bar was successfully deleted"
     redirect_to bars_path
@@ -54,9 +54,4 @@ class BarsController < ApplicationController
   def bar_params
     params.require(:bar).permit(:name, :address, :description, :rating, :user_id)
   end
-
-  def author?
-    redirect_to bars_path if current_user != @bar.user
-  end
-  
 end
