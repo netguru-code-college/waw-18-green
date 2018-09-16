@@ -4,7 +4,7 @@ class BarsController < ApplicationController
   before_action :author?, only: [:destroy, :edit]
 
   def index
-    @bars = Bar.all
+    @bars = BarDecorator.decorate_collection(Bar.all)
   end
 
   def show
@@ -44,7 +44,7 @@ class BarsController < ApplicationController
   private
 
   def set_bar
-    @bar = Bar.find(params[:id])
+    @bar = BarDecorator.new(Bar.find(params[:id]))
   end
 
   def bar_params

@@ -19,6 +19,7 @@ gem 'sprockets-rails'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'faker'
+gem 'draper'
 gem 'carrierwave-dropbox'
 gem 'dotenv-rails'
 
