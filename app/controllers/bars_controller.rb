@@ -8,6 +8,7 @@ class BarsController < ApplicationController
   end
 
   def show
+    @image = Image.new
   end
 
   def new
