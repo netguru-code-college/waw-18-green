@@ -1,13 +1,12 @@
 .container
   .row
-    %h1.center.full_width #{@bar.name}
-
+    %h1.text-center.full_width #{@bar.name}
 
   .row
     .col-md-6
       .card.card-show
         .card-img-top
-          .center
+          .text-center
             = image_tag("chinczyk.png", size:'300x300')
         .card-body
           %h4.card-title
@@ -36,7 +35,7 @@
     .col-md6
       %p TODO comments
   .row
-    .center.full_width
+    .text-center.full_width
       [
-
       = link_to "Go back to all bars.", bars_path
+      ]
